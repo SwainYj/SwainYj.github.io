@@ -6,54 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yinkp.com">
-  <title>swain的博客</title>
+  <title>PHP下Twig的安装与使用 | swain的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="九宫格（二）demo
-	
-		#main{
-			width: 170px;
-			height:170px;
-			background: blue;
-			margin: 0 auto;
-		}
-		#main div{
-			width: 50px;
-			line-height: 50px;
-			text-align:center;
-			background: #AAA;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="swain的博客">
-<meta property="og:url" content="http://yinkp.com/assets/demo/jiugongge_demo2.html">
+  <meta name="description" content="下载Twig源码 https://github.com/twigphp/Twig/tags
+复制lib文件夹下核心目录到CI框架的 common 目录
+在CI框架创建扩展文件，路径： ./application/libraries/Twig.php 扩展代码：
+&amp;lt;?php/** 
+
+Created by PhpStorm. 
+User: Swain 
+Date: 2016/6/8*/req">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP下Twig的安装与使用">
+<meta property="og:url" content="http://yinkp.com/2017/05/11/mould/twing20170511/index.html">
 <meta property="og:site_name" content="swain的博客">
-<meta property="og:description" content="九宫格（二）demo
-	
-		#main{
-			width: 170px;
-			height:170px;
-			background: blue;
-			margin: 0 auto;
-		}
-		#main div{
-			width: 50px;
-			line-height: 50px;
-			text-align:center;
-			background: #AAA;">
-<meta property="og:updated_time" content="2016-12-30T22:16:28.000Z">
+<meta property="og:description" content="下载Twig源码 https://github.com/twigphp/Twig/tags
+复制lib文件夹下核心目录到CI框架的 common 目录
+在CI框架创建扩展文件，路径： ./application/libraries/Twig.php 扩展代码：
+&amp;lt;?php/** 
+
+Created by PhpStorm. 
+User: Swain 
+Date: 2016/6/8*/req">
+<meta property="og:updated_time" content="2017-05-11T07:43:15.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swain的博客">
-<meta name="twitter:description" content="九宫格（二）demo
-	
-		#main{
-			width: 170px;
-			height:170px;
-			background: blue;
-			margin: 0 auto;
-		}
-		#main div{
-			width: 50px;
-			line-height: 50px;
-			text-align:center;
-			background: #AAA;">
+<meta name="twitter:title" content="PHP下Twig的安装与使用">
+<meta name="twitter:description" content="下载Twig源码 https://github.com/twigphp/Twig/tags
+复制lib文件夹下核心目录到CI框架的 common 目录
+在CI框架创建扩展文件，路径： ./application/libraries/Twig.php 扩展代码：
+&amp;lt;?php/** 
+
+Created by PhpStorm. 
+User: Swain 
+Date: 2016/6/8*/req">
   
     <link rel="alternative" href="/atom.xml" title="swain的博客" type="application/atom+xml">
   
@@ -197,57 +182,106 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-mould/twing20170511" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP下Twig的安装与使用
+    </h1>
+  
+
+        
+        <a href="/2017/05/11/mould/twing20170511/" class="archive-article-date">
+  	<time datetime="2017-05-11T07:42:48.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!doctype html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>九宫格（二）demo</title>
-	<style>
-		#main{
-			width: 170px;
-			height:170px;
-			background: blue;
-			margin: 0 auto;
-		}
-		#main div{
-			width: 50px;
-			line-height: 50px;
-			text-align:center;
-			background: #AAA;
-			margin:5px 5px 0 0;
-		}
-		#main a{
-			width: 55px;
-			line-height: 55px;
-			float: left;
-			padding: 0 0 5px 5px;
-			margin: 0 -5px -5px 0;
-			text-decoration: none;
-		}
-		#main a:hover{
-			background: red;
-		}
-	</style>
-</head>
-<body>
-	<div id="main">
-		<a href=""><div>1</div></a>
-		<a href=""><div>2</div></a>
-		<a href=""><div>3</div></a>
-		<a href=""><div>4</div></a>
-		<a href=""><div>5</div></a>
-		<a href=""><div>6</div></a>
-		<a href=""><div>7</div></a>
-		<a href=""><div>8</div></a>
-		<a href=""><div>9</div></a>
-	</div>
-</body>
-</html>
+        <ol>
+<li>下载Twig源码 <a href="https://github.com/twigphp/Twig/tags" target="_blank" rel="external">https://github.com/twigphp/Twig/tags</a></li>
+<li>复制lib文件夹下核心目录到CI框架的 common 目录</li>
+<li><p>在CI框架创建扩展文件，路径： ./application/libraries/Twig.php 扩展代码：</p>
+<p>&lt;?php<br>/** </p>
+<ul>
+<li>Created by PhpStorm. </li>
+<li>User: Swain </li>
+<li>Date: 2016/6/8<br>*/<br>require BASEPATH.”common/Twig/Autoloader.php”;<br>class twig<br>{<br>public $twig;  </li>
+</ul>
+<p>public $config;  </p>
+<p>private $data = array();  </p>
+<p>/** </p>
+<ul>
+<li>读取配置文件twig.php并初始化设置 </li>
+<li>*/<br>public function __construct($config)<br>{<br> $config_default = array(  <pre><code>&apos;cache_dir&apos; =&gt; false, //开启缓存  
+&apos;debug&apos; =&gt; false, //开启调试模式（dump函数可用）  
+&apos;auto_reload&apos; =&gt; true,  
+&apos;extension&apos; =&gt; &apos;.tpl&apos;, //默认后缀名  
+</code></pre> );<br> $this-&gt;config = array_merge($config_default, $config);<br> Twig_Autoloader::register ();<br> $loader = new Twig_Loader_Filesystem ($this-&gt;config[‘template_dir’]);<br> $this-&gt;twig = new Twig_Environment ($loader, array (  <pre><code>&apos;cache&apos; =&gt; $this-&gt;config[&apos;cache_dir&apos;],  
+&apos;debug&apos; =&gt; $this-&gt;config[&apos;debug&apos;],  
+&apos;auto_reload&apos; =&gt; $this-&gt;config[&apos;auto_reload&apos;],  
+</code></pre> ) );<br> $CI = &amp; get_instance ();<br> $CI-&gt;load-&gt;helper(array(‘url’));<br> $this-&gt;twig-&gt;addFunction(new Twig_SimpleFunction(‘site_url’, ‘site_url’));<br> $this-&gt;twig-&gt;addFunction(new Twig_SimpleFunction(‘base_url’, ‘base_url’));<br>}  </li>
+</ul>
+<p>/** </p>
+<ul>
+<li>给变量赋值 </li>
+<li></li>
+<li>@param string|array $var </li>
+<li>@param string $value<br>*/<br>public function assign($var, $value = NULL)<br>{<br> if(is_array($var)) {  <pre><code>foreach($var as $key =&gt; $val) {  
+    $this-&gt;data[$key] = $val;  
+}  
+</code></pre> } else {  <pre><code>$this-&gt;data[$var] = $value;  
+</code></pre> }<br>}  </li>
+</ul>
+<p>/** </p>
+<ul>
+<li>模版渲染 </li>
+<li></li>
+<li>@param string $template 模板名 </li>
+<li>@param array $data 变量数组 </li>
+<li>@param string $return true返回 false直接输出页面 </li>
+<li>@return string<br>*/<br>public function render($template, $data = array(), $return = FALSE)<br>{<br> $template = $this-&gt;twig-&gt;loadTemplate ( $this-&gt;getTemplateName($template) );<br> $data = array_merge($this-&gt;data, $data);<br> if ($return === TRUE) {  <pre><code>return $template-&gt;render ( $data );  
+</code></pre> } else {  <pre><code>return $template-&gt;display ( $data );  
+</code></pre> }<br>}  </li>
+</ul>
+<p>/** </p>
+<ul>
+<li>获取模版名 </li>
+<li></li>
+<li>@param string $template<br>*/<br>public function getTemplateName($template)<br>{<br> $default_ext_len = strlen($this-&gt;config[‘extension’]);<br> if(substr($template, -$default_ext_len) != $this-&gt;config[‘extension’]) {  <pre><code>$template .= $this-&gt;config[&apos;extension&apos;];  
+</code></pre> }<br> return $template;<br>}  </li>
+</ul>
+<p>/** </p>
+<ul>
+<li>字符串渲染 </li>
+<li></li>
+<li>@param string $string 需要渲染的字符串 </li>
+<li>@param array $data 变量数组 </li>
+<li>@param string $return true返回 false直接输出页面 </li>
+<li>@return string<br>*/<br>public function parse($string, $data = array(), $return = FALSE)<br>{<br> $string = $this-&gt;twig-&gt;loadTemplate ( $string );<br> $data = array_merge($this-&gt;data, $data);<br> if ($return === TRUE) {  <pre><code>return $string-&gt;render ( $data );  
+</code></pre> } else {  <pre><code>return $string-&gt;display ( $data );  
+</code></pre> }<br>}<br>}  </li>
+</ul>
+</li>
+<li><p>在CI框架创建配制文件，路径： ./application/config/twig.php 配制代码：<br> &lt;?php if ( ! defined(‘BASEPATH’)) exit(‘No direct script access allowed’);<br>// 默认扩展名<br>$config[‘extension’] = “.twig”;<br>// 默认模版路径<br>$config[‘template_dir’] = APPPATH . “views/“;<br>// 缓存目录<br>$config[‘cache_dir’] = APPPATH . “cache/twig/“;<br>// 是否开启调试模式<br>$config[‘debug’] = false;<br>// 自动刷新<br>$config[‘auto_reload’] = true;</p>
+</li>
+</ol>
+<ol>
+<li>设置自动加载 ./application/config/autoload.php 把扩展及配制自动加载<br><code>$autoload[&#39;libraries&#39;] = array(&#39;Twig&#39;);</code><br><code>$autoload[&#39;libraries&#39;] = array(&#39;Twig&#39;);</code></li>
+</ol>
+<h2 id="Twig模板的使用"><a href="#Twig模板的使用" class="headerlink" title="##Twig模板的使用"></a>##Twig模板的使用</h2><p>$loader = new Twig_Loader_Filesystem(‘application/path’);//模板路径</p>
+<p>$twig = new Twig_Environment($loader, array(</p>
+<p>‘cache’ =&gt; ‘/path/compilation_cache’,  //设置缓存，建议调试阶段关闭（缓存太//强大删不掉的那种）</p>
+<p>));</p>
+<p>$template = $twig-&gt;loadTemplate(‘test.twig’);  //载入模板名称</p>
+<p>$template-&gt;display($data);//变量数据传入模板展示</p>
+<p>开发文档：<a href="http://twig.sensiolabs.org/documentation" target="_blank" rel="external">http://twig.sensiolabs.org/documentation</a></p>
+<p>相关链接：<a href="http://blog.csdn.net/swain_yj/article/details/51693906" target="_blank" rel="external">Twig的安装与使用</a></p>
+
       
 
       
@@ -281,6 +315,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模板</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -331,7 +376,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yinkp.com/assets/demo/jiugongge_demo2.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yinkp.com/2017/05/11/mould/twing20170511/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,6 +388,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/05/11/hello-everyone/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          你好啊
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/11/emotion/daily20170511/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">最近听了一首歌</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -376,7 +440,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
