@@ -6,17 +6,33 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yinkp.com">
-  <title>Tag: 模板 | swain的博客</title>
+  <title>apidoc 的安装与使用 | swain的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="仍然渴望命运的波澜。资深后台开发人员，深入研究PHP，致力精通python。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="swain的博客">
-<meta property="og:url" content="http://yinkp.com/tags/模板/index.html">
+  <meta name="description" content="什么是apidoc ? apidoc是基于node的web api文档的生成工具。    很早之前用过apidoc来写后台接口文档，过了一年左右居然全然忘记了怎样搭环境与怎样用。今天没事，就试着搭了一下，记录一下加深印象。为什么要使用apidoc？
+
+apidoc可以提供统一的文档格式，避免了不同开发人员创造出多样的文档格式。
+apidoc操作简单，注释风格的编码结构清晰，易于编写维护。
+apid">
+<meta property="og:type" content="article">
+<meta property="og:title" content="apidoc 的安装与使用">
+<meta property="og:url" content="http://yinkp.com/2017/05/16/js/apidoc20170516/index.html">
 <meta property="og:site_name" content="swain的博客">
-<meta property="og:description" content="仍然渴望命运的波澜。资深后台开发人员，深入研究PHP，致力精通python。">
+<meta property="og:description" content="什么是apidoc ? apidoc是基于node的web api文档的生成工具。    很早之前用过apidoc来写后台接口文档，过了一年左右居然全然忘记了怎样搭环境与怎样用。今天没事，就试着搭了一下，记录一下加深印象。为什么要使用apidoc？
+
+apidoc可以提供统一的文档格式，避免了不同开发人员创造出多样的文档格式。
+apidoc操作简单，注释风格的编码结构清晰，易于编写维护。
+apid">
+<meta property="og:image" content="http://yinkp.com/assets/blogImg/apidoc1.png">
+<meta property="og:image" content="http://yinkp.com/assets/blogImg/apidoc2.png">
+<meta property="og:updated_time" content="2017-05-16T04:14:54.376Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swain的博客">
-<meta name="twitter:description" content="仍然渴望命运的波澜。资深后台开发人员，深入研究PHP，致力精通python。">
+<meta name="twitter:title" content="apidoc 的安装与使用">
+<meta name="twitter:description" content="什么是apidoc ? apidoc是基于node的web api文档的生成工具。    很早之前用过apidoc来写后台接口文档，过了一年左右居然全然忘记了怎样搭环境与怎样用。今天没事，就试着搭了一下，记录一下加深印象。为什么要使用apidoc？
+
+apidoc可以提供统一的文档格式，避免了不同开发人员创造出多样的文档格式。
+apidoc操作简单，注释风格的编码结构清晰，易于编写维护。
+apid">
+<meta name="twitter:image" content="http://yinkp.com/assets/blogImg/apidoc1.png">
   
     <link rel="alternative" href="/atom.xml" title="swain的博客" type="application/atom+xml">
   
@@ -160,60 +176,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js/apidoc20170516" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/11/mould/twing20170511/" class="archive-article-date">
-  	<time datetime="2017-05-11T07:42:48.419Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/11/mould/twing20170511/">PHP下Twig的安装与使用</a>
+    <h1 class="article-title" itemprop="name">
+      apidoc 的安装与使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/05/16/js/apidoc20170516/" class="archive-article-date">
+  	<time datetime="2017-05-16T04:14:40.979Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>什么是apidoc ?</strong> apidoc是基于node的web api文档的生成工具。<br>    很早之前用过apidoc来写后台接口文档，过了一年左右居然全然忘记了怎样搭环境与怎样用。今天没事，就试着搭了一下，记录一下加深印象。<br><strong>为什么要使用apidoc？</strong></p>
+<ul>
+<li>apidoc可以提供统一的文档格式，避免了不同开发人员创造出多样的文档格式。</li>
+<li>apidoc操作简单，注释风格的编码结构清晰，易于编写维护。</li>
+<li>apidoc支持发送请求，返回结果一目了然。</li>
+</ul>
+<h2>apidoc的安装与使用：</h2>
+
+<ul>
+<li>node的安装，自行下载node最新版本。</li>
+<li>apidoc 的安装<br> 打开终端输入 <code>sudo npm install apidoc -g</code> 完成安装。<br> 终端输入 apidoc -h 查看是否安装成功。</li>
+<li>使用apidoc创建文档<br> 创建项目文件夹doc。在doc下创建src 和 output文件夹。分别用来存放编写的API文档和编译生成的API文档。</li>
+<li>创建描述文件<br> 在doc文件夹下新建apidoc.json文件，用来描述API文档的相关信息。样例如下：<br><code> {<br>   “name”: “swain”,<br>   “version”: “1.0.0”,<br>   “description”: “我的接口文档”,<br>   “title”: “接口文档测试”,<br>   “url” : “<a href="http://localhost/test" target="_blank" rel="external">http://localhost/test</a>“<br> }</code><br> name: 项目名称，version:版本号，description:项目描述，title:网页标题相当于<title>标签，url:接口请求地址。</title></li>
+<li>在src文件夹下创建test.js文件（也可以是java/php）.按照apidoc的编写规范：<br><img src="/assets/blogImg/apidoc1.png" alt=""></li>
+<li>在终端输入下面命令生成API文档。<br><code>apidoc -i src/ -o output/</code><br> 若没有语法错误将在终端显示<code>info:Done</code>，表示我们已经创建好一个API文档。在浏览器打开output文件下的<code>index.html</code>文件查看文档。你可以将该文档上传至服务器，这样随时随地都可以查看该API文档了。</li>
+</ul>
+<p></p><h2>常用关键字：</h2><br><img src="/assets/blogImg/apidoc2.png" alt=""><p></p>
+<p>相关链接：<a href="http://apidocjs.com/" target="_blank" rel="external">apidoc官方文档</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weichat.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模板</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yinkp.com/2017/05/16/js/apidoc20170516/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/05/11/hello-everyone/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">你好啊</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-    
+  
+
+  
 
 
           </div>
@@ -236,9 +364,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
