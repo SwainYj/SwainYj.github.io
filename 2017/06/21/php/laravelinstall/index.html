@@ -6,63 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yinkp.com">
-  <title>swain的博客</title>
+  <title>mac系统习下laravel的安装 | swain的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="*{
-		margin:0;
-		padding:0;
-	}
-	#textBox{
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -999;
-	}
-	#bg{
-		background: url(sgws.jpg) -50px;
-
-		width:500px;
-		height: 314px;
-		text-align:">
-<meta property="og:type" content="website">
-<meta property="og:title" content="swain的博客">
-<meta property="og:url" content="http://yinkp.com/assets/demo/mediator/demo.html">
+  <meta name="description" content="安装composer：brew composer
+更新composer：composer update（可忽略，我安装composer之后~/.composer文件夹下是空的。在这个坑里转了好久。）
+安装laravel:composer global require “laravel/installer”
+添加环境变量：export PATH=$PATH:~/.composer/vendor/b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac系统习下laravel的安装">
+<meta property="og:url" content="http://yinkp.com/2017/06/21/php/laravelinstall/index.html">
 <meta property="og:site_name" content="swain的博客">
-<meta property="og:description" content="*{
-		margin:0;
-		padding:0;
-	}
-	#textBox{
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -999;
-	}
-	#bg{
-		background: url(sgws.jpg) -50px;
-
-		width:500px;
-		height: 314px;
-		text-align:">
-<meta property="og:updated_time" content="2016-12-30T22:16:28.000Z">
+<meta property="og:description" content="安装composer：brew composer
+更新composer：composer update（可忽略，我安装composer之后~/.composer文件夹下是空的。在这个坑里转了好久。）
+安装laravel:composer global require “laravel/installer”
+添加环境变量：export PATH=$PATH:~/.composer/vendor/b">
+<meta property="og:updated_time" content="2017-06-21T14:23:25.281Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swain的博客">
-<meta name="twitter:description" content="*{
-		margin:0;
-		padding:0;
-	}
-	#textBox{
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -999;
-	}
-	#bg{
-		background: url(sgws.jpg) -50px;
-
-		width:500px;
-		height: 314px;
-		text-align:">
+<meta name="twitter:title" content="mac系统习下laravel的安装">
+<meta name="twitter:description" content="安装composer：brew composer
+更新composer：composer update（可忽略，我安装composer之后~/.composer文件夹下是空的。在这个坑里转了好久。）
+安装laravel:composer global require “laravel/installer”
+添加环境变量：export PATH=$PATH:~/.composer/vendor/b">
   
     <link rel="alternative" href="/atom.xml" title="swain的博客" type="application/atom+xml">
   
@@ -206,85 +170,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-php/laravelinstall" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mac系统习下laravel的安装
+    </h1>
+  
+
+        
+        <a href="/2017/06/21/php/laravelinstall/" class="archive-article-date">
+  	<time datetime="2017-06-21T14:23:08.071Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE HTML>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src="jquery.js"></script>
-<style type="text/css">
-	*{
-		margin:0;
-		padding:0;
-	}
-	#textBox{
-		position: absolute;
-		left: 0;
-		top: 0;
-		z-index: -999;
-	}
-	#bg{
-		background: url(sgws.jpg) -50px;
+        <ol>
+<li>安装composer：brew composer</li>
+<li>更新composer：composer update（可忽略，我安装composer之后~/.composer文件夹下是空的。在这个坑里转了好久。）</li>
+<li>安装laravel:composer global require “laravel/installer”</li>
+<li>添加环境变量：export PATH=$PATH:~/.composer/vendor/bin（执行resource，重新打开窗口立即生效）</li>
+<li>在项目文件夹生成laravel项目：laravel new projectname。（你可能需要先修改项目文件夹权限：sudo chmod -R 777 yourdir）</li>
+<li>进入laravel项目文件夹，启动php服务：php -S localhost:8001 -t public/ 访问localhost：8001即可查看项目。</li>
+</ol>
 
-		width:500px;
-		height: 314px;
-		text-align: center;
-		position: relative;
-		-webkit-animation:roll 3s infinite ease ;
-		   -moz-animation:roll 3s infinite ease ;
-		    -ms-animation:roll 3s infinite ease ;
-		     -o-animation:roll 3s infinite ease ;
-				animation:roll 3s infinite ease ;
-	}
-	#barHome{
-		width: 300px;
-		height: 10px;
-		background: #f00;
-		overflow: hidden;
-		position: absolute;
-		bottom: 45px;
-		left: 50%;
-		margin-left: -150px;
-	}
-	#barGuest{
-		width: 150px;
-		height: 10px;
-		background: #00f;
-	}
-	#results{
-		width: 300px;
-		position: absolute;
-		bottom: 65px;
-		left: 50%;
-		margin-left: -150px;
-		color: #fff;
-	}
-	#results span{
-		margin: 50px;
-	}
-	@-webkit-keyframes roll {0%{background-position: -90px;}50%{background-position: -10px;}100%{background-position: -90px;}}
-	@-moz-keyframes roll {0%{background-position: -90px;}50%{background-position: -10px;}100%{background-position: -90px;}}
-	@-ms-keyframes roll {0%{background-position: -90px;}50%{background-position: -10px;}100%{background-position: -90px;}}
-	@-o-keyframes roll {0%{background-position: -90px;}50%{background-position: -10px;}100%{background-position: -90px;}}
-	@keyframes roll {0%{background-position: -90px;}50%{background-position: -10px;}100%{background-position: -90px;}}
-</style>
-<title>mediator</title>
-</head>
-<body>
-	<div id="bg">
-		<input id="textBox" type="text">
-		<div id="results">请按F键与J键</div>
-		<div id="barHome">
-			<div id="barGuest"></div>
-		</div>
-	</div>
-<script type="text/javascript" src="mediator.js"></script>
-</body>
-</html>
       
 
       
@@ -318,6 +232,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -368,7 +293,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yinkp.com/assets/demo/mediator/demo.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yinkp.com/2017/06/21/php/laravelinstall/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -380,6 +305,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/05/php/oauth2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于CI框架oauth2.0的搭建与说明</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -413,7 +348,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -162,6 +162,72 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-php/laravelinstall" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/php/laravelinstall/">mac系统习下laravel的安装</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/21/php/laravelinstall/" class="archive-article-date">
+  	<time datetime="2017-06-21T14:23:08.071Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>安装composer：brew composer</li>
+<li>更新composer：composer update（可忽略，我安装composer之后~/.composer文件夹下是空的。在这个坑里转了好久。）</li>
+<li>安装laravel:composer global require “laravel/installer”</li>
+<li>添加环境变量：export PATH=$PATH:~/.composer/vendor/bin（执行resource，重新打开窗口立即生效）</li>
+<li>在项目文件夹生成laravel项目：laravel new projectname。（你可能需要先修改项目文件夹权限：sudo chmod -R 777 yourdir）</li>
+<li>进入laravel项目文件夹，启动php服务：php -S localhost:8001 -t public/ 访问localhost：8001即可查看项目。</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/21/php/laravelinstall/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-php/oauth2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -648,15 +714,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">心情</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
