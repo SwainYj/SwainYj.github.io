@@ -162,6 +162,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-python/ffmpeg20171101" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/01/python/ffmpeg20171101/">python脚本使用ffmeg合并超多ts文件到.mp4</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/01/python/ffmpeg20171101/" class="archive-article-date">
+  	<time datetime="2017-11-01T15:09:24.818Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 遇到的坑：</p>
+<ul>
+<li>合并ts文件过多时提示”too many open files”错误</li>
+<li>ffmpeg不支持mp4文件的合并</li>
+</ul>
+<p>刚开始完python,感觉python操作起文件真爽，一些基本的函数我都感觉特别高大上啊[捂脸]：</p>
+<ul>
+<li><strong>os.listdir()列出文件夹所有文件并等额分割</strong></li>
+<li><strong>路径与文件名完美拼接</strong></li>
+<li><strong>ffmpeg合并ts文件到mp4</strong></li>
+<li><strong>ffmpeg合并多个mp4文件到一个mp4</strong></li>
+</ul>
+<hr>
+<h2 id="贴代码"><a href="#贴代码" class="headerlink" title="贴代码"></a>贴代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> os</div><div class="line">dirs = <span class="string">"/data/vod/ts/"</span></div><div class="line">mp4 = <span class="string">"/data/vod/mp4/"</span></div><div class="line">filename = <span class="string">"asddaas.mp4"</span></div><div class="line">a = <span class="number">1</span></div><div class="line">content = <span class="string">""</span></div><div class="line">lists = os.listdir(dirs)</div><div class="line">b = [lists[i:i+<span class="number">250</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(lists),<span class="number">250</span>)]</div><div class="line"><span class="keyword">for</span> lis <span class="keyword">in</span> b:</div><div class="line">	cmd = <span class="string">"cd %s &amp;&amp; ffmpeg -i \"concat:"</span>%mp4</div><div class="line">	<span class="keyword">for</span> file <span class="keyword">in</span> lis:</div><div class="line">		<span class="keyword">if</span> file != <span class="string">'.DS_Store'</span>:</div><div class="line">			file_path = os.path.join(dirs, file)</div><div class="line">			cmd += file_path + <span class="string">'|'</span>;</div><div class="line">			<span class="comment"># print("文件：%s"%file_path)</span></div><div class="line">	cmd = cmd[:<span class="number">-1</span>]</div><div class="line">	cmd += <span class="string">'" -bsf:a aac_adtstoasc -c copy -vcodec copy %s.mp4'</span>%a</div><div class="line">	<span class="keyword">try</span>:</div><div class="line">		os.system(cmd)</div><div class="line">		content += <span class="string">"file '%s.mp4'\n"</span>%a</div><div class="line">		a = a+<span class="number">1</span></div><div class="line">	<span class="keyword">except</span>:</div><div class="line">		print(<span class="string">"Unexpected error"</span>)</div><div class="line"></div><div class="line">fp = open(<span class="string">"%smp4list.txt"</span>%mp4,<span class="string">'a+'</span>)</div><div class="line">fp.write(content)</div><div class="line">fp.close()</div><div class="line">mp4cmd = <span class="string">"cd %s &amp;&amp; ffmpeg -y -f concat -i mp4list.txt -c copy %s"</span>%(mp4,filename)</div><div class="line">os.system(mp4cmd)</div></pre></td></tr></table></figure>
+<ul>
+<li><p>合并ts文件过多时总是提示”too many open files”错误<br>系统支持最大打开文件数有限制。终端输入 &gt;ulimit -n  查看最大打开文件数量.我的电脑最大限制为256。自己设置 &gt;ulimit -n 256000 提示设置成功但运行ffmpeg合并命令仍然报错。最后只好将所有ts文件切片分到不同数组中。</p>
+</li>
+<li><p>lists = os.listdir(dirs)<br>b = [lists[i:i+250] for i in range(0,len(lists),250)]<br>将dirs下所有文件名放到lists中 并以250个元素一组分割，不够250视为一组。list = [1,2,3,4,5]    a=[list[i:i+2] for i in range(0,len(list),2)]此时打印a将会看到 a=[[1,2],[3,4],[5,]]</p>
+</li>
+<li><p>合并ts文件到mp4文件：ffmpeg -i “concat:1.ts|2.ts|3.ts|4.ts|5.ts -bsf:a aac_adtstoasc -c copy -vcodec copy 1.mp4</p>
+</li>
+<li><p>ffmpeg不支持直接mp4文件的合并，查了一下好多是说先说mp4文件转ts文件在进行合并，太麻烦。找到一种将所有mp4文件名放到一个txt文件中再去合并txt文件，刚好符合预期。就喜欢这种简单暴力的方法：ffmpeg -y -f concat -i mp4list.txt -c copy asddaas.mp4<br>mp4list.txt文件内容：<br>file “1.mp4”<br>file “2.mp4”<br>file “3.mp4”</p>
+</li>
+</ul>
+<p>相关链接：<a href="http://blog.csdn.net/swain_yj/article/details/78412295" target="_blank" rel="external">python脚本使用ffmeg合并超多ts文件到mp4</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">码农</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/01/python/ffmpeg20171101/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-emotion/daily20170925" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -622,67 +705,10 @@
 
 
   
-    <article id="post-emotion/daily20170511" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/11/emotion/daily20170511/">最近听了一首歌</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/11/emotion/daily20170511/" class="archive-article-date">
-  	<time datetime="2017-05-11T07:16:00.067Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近听了一首歌，歌词挺美的，歌声也有画面感。分享给大家。</p>
-<p><img src="/assets/blogImg/smrx.png" alt=""><br><a href="http://music.163.com/#/m/playlist?id=422891281&amp;userid=304706205" target="_blank" rel="external">思美人兮</a></p>
-<p><em>歌词：</em><br>思美人兮 路长漫漫不可及<br>拭泪天涯无归期<br>千言万语 只如梗在心底<br>愁丝万缕一朝夕<br>思美人兮 悠悠浮云为我寄<br>奈何鸿飞不解意<br>归鸟乘风远飞<br>我折翼在原地<br>只见思念划天际<br>男儿志千古愁<br>溢于胸怀中<br>抛入一汪江水向东流<br>笑非笑 忧且忧<br>浊世谁人能懂<br>拂袖独行不回首<br>幽兰花异芬芳<br>含风影自香<br>问君可有识得她芳踪<br>趁年华未散尽<br>摘得芙蓉与共<br>莫让憾事绕心中<br>思美人兮 纵然九死无悔意<br>我心惜古人不及<br>江可竭山可移<br>唯志节不离弃<br>宁求上下无归期<br>男儿志千古愁<br>溢于胸怀中<br>抛入一汪江水向东流<br>笑非笑 忧且忧<br>浊世谁人能懂<br>拂袖独行不回首<br>幽兰花异芬芳<br>含风影自香<br>问君可有识得她芳踪<br>趁年华未散尽<br>摘得芙蓉与共<br>莫让憾事绕心中<br>男儿志千古愁<br>溢于胸怀中<br>抛入一汪江水向东流<br>笑非笑 忧且忧<br>浊世谁人能懂<br>拂袖独行不回首<br>幽兰花异芬芳<br>含风影自香<br>问君可有识得她芳踪<br>趁年华未散尽<br>摘得芙蓉与共<br>莫让憾事绕心中<br>思美人兮<br>漂泊南行无所依<br>我欲随风同归去</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">心情</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/11/emotion/daily20170511/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -775,11 +801,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">心情</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color3">模板</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,7 +817,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模板</a>
+                <a href="javascript:void(0)" class="js-tag color3">码农</a>
               </li>
             
             <div class="clearfix"></div>
